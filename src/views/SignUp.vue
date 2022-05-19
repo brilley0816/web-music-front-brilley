@@ -59,12 +59,7 @@ export default defineComponent({
       const params = new URLSearchParams();
       params.append("username", registerForm.username);
       params.append("password", registerForm.password);
-      params.append("sex", registerForm.sex);
       params.append("phone_num", registerForm.phoneNum);
-      params.append("email", registerForm.email);
-      params.append("birth", getBirth(registerForm.birth));
-      params.append("introduction", registerForm.introduction);
-      params.append("location", registerForm.location);
 
       try {
         const result = (await HttpManager.SignUp(params)) as ResponseBody;

@@ -3,7 +3,7 @@
     <el-aside class="personalInfo-slide">
       <el-image class="personal-img" fit="contain" :src="attachImageUrl(userPic)" @click="dialogTableVisible = true"/>
       <div class="album-info">
-        <el-descriptions title="个人信息" width=220px column=1 >
+        <el-descriptions title="个人信息" width=220px column=1 v-if="personalInfo">
         <el-descriptions-item label="用户" width=220px>{{ personalInfo.username }}</el-descriptions-item>
         <el-descriptions-item label="性别" width=220px v-if="personalInfo.sex !== 2">{{ getUserSex(personalInfo.sex) }}</el-descriptions-item>
         <el-descriptions-item label="生日" width=220px>{{ getBirth(personalInfo.birth) }}</el-descriptions-item>
@@ -76,20 +76,23 @@ export default defineComponent({
 
     async function getUserInfo(id) {
       const result = (await HttpManager.getUserOfId(id)) as ResponseBody;
+      console.log("resu:");
       console.log(result);
       personalInfo.username = result.data[0].username;
       personalInfo.userSex = result.data[0].sex;
       personalInfo.birth = result.data[0].birth;
       personalInfo.location = result.data[0].location;
       personalInfo.phone = result.data[0].phoneNum;
-      personalInfo.email = result.data[0].email;
+      personalInfo.email = result.data[0].email;  //email是null可能产生问题！
       personalInfo.introduction = result.data[0].introduction;
+      console.log(personalInfo.username)
     }
 
     // 获取收藏的歌曲
     async function getCollection(userId) {
       collectSongList.value = []
       const result = (await HttpManager.getCollectionOfUser(userId)) as ResponseBody;
+      if(!result) return
       const collectIDList = result.data || []; // 存放收藏的歌曲ID
       // 通过歌曲ID获取歌曲信息
       for (const item of collectIDList) {

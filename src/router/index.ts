@@ -64,6 +64,24 @@ const routes: Array<RouteRecordRaw> = [
           name: "singer-detail",
           component: () => import("@/views/singer/SingerDetail.vue"),
         },
+        {
+          path: "/setting",
+          name: "setting",
+          meta: {
+            requireAuth: true,
+          },
+          component: () => import("@/views/setting/Setting.vue"),
+          children: [
+            {
+              path: "/setting/PersonalData",
+              name: "personalData",
+              meta: {
+                requireAuth: true,
+              },
+              component: () => import("@/views/setting/PersonalData.vue"),
+            }
+          ]
+        },
     ]
   }
 ]
