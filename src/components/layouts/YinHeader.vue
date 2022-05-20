@@ -1,7 +1,7 @@
 <template>
   <div class="yin-header">
     <!--图标-->
-    <div class="header-logo" @click="goPage()">
+    <div class="header-logo" @click="goPage(0,0)">
       <yin-icon :icon="iconList.ERJI"></yin-icon>
       <span>{{ musicName }}</span>
     </div>

@@ -26,6 +26,10 @@ export const HEADERNAVLIST = [
     name: NavName.Singer,
     path: RouterName.Singer,
   },
+  {
+    name: NavName.Chat,
+    path: RouterName.Chat,
+  },
 ];
 
 // 右侧导航栏  - 登陆 和 注册！
@@ -49,7 +53,7 @@ export const MENULIST = [
   },
   {
     name: NavName.Chat,
-    path: RouterName.SignOut,
+    path: RouterName.Chat,
   },
   {
     name: NavName.Setting,
