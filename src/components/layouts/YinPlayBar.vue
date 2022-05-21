@@ -83,7 +83,7 @@ export default defineComponent({
     const userId = computed(() => store.getters.userId);
     const songId = computed(() => store.getters.songId);
     const token = computed(() => store.getters.token);
-
+    console.log("now the token is : " + token.value )
     watch(songId, () => {
       initCollection();
     });

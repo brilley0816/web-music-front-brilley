@@ -14,12 +14,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue-demi'
 import {mapState} from 'vuex'
 
-export default {
+export default defineComponent({
   name: 'message',
-  data () {
+  setup() {
     return {
       img: '../src/assets/images/1.jpg'
     }
@@ -45,7 +46,7 @@ export default {
       },1)
     }
   }
-}
+});
 </script>
 
 <style lang="scss" scoped>

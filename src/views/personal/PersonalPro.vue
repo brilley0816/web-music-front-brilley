@@ -5,7 +5,7 @@
       <div class="album-info">
         <el-descriptions title="个人信息" width=220px column=1 v-if="personalInfo">
         <el-descriptions-item label="用户" width=220px>{{ personalInfo.username }}</el-descriptions-item>
-        <el-descriptions-item label="性别" width=220px v-if="personalInfo.sex !== 2">{{ getUserSex(personalInfo.sex) }}</el-descriptions-item>
+        <el-descriptions-item label="性别" width=220px v-if="personalInfo.sex != 2">{{ getUserSex(personalInfo.sex) }}</el-descriptions-item>
         <el-descriptions-item label="生日" width=220px>{{ getBirth(personalInfo.birth) }}</el-descriptions-item>
         <el-descriptions-item label="手机" width=260px>{{ personalInfo.phone }}</el-descriptions-item>
         <el-descriptions-item label="邮箱" width=260px>{{ personalInfo.email }}</el-descriptions-item>
@@ -18,7 +18,7 @@
       <el-tag size="small"></el-tag> 
       <el-tag size="small">可爱</el-tag>    
       <el-tag size="small">严严宝宝</el-tag>  
-      <el-dialog v-model="dialogTableVisible" title="修改头像"> <upload></upload> </el-dialog>
+      <el-dialog v-model="dialogTableVisible" title="修改头像"> <Upload></upload> </el-dialog>
     </el-aside>
     <el-main class="album-main">
       <!-- <h1>{{ songDetails.name }}</h1>

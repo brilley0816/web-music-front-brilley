@@ -21,6 +21,7 @@ import playList from "@/components/PlayList.vue";
 import { swiperList, NavName } from "@/enums";
 import { HttpManager } from "@/api";
 import mixin from "@/mixins/mixin";
+import { dataType } from "element-plus/es/components/table-v2/src/common";
 
 const songList = ref([]); // 歌单列表
 const singerList = ref([]); // 歌手列表

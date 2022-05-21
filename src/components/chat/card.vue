@@ -10,17 +10,26 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue"
+import { toRef } from "@vue/re";
+export default defineComponent({
   name: 'card',
-  data () {
+  setup() {
+	const user: User = toRef({
+	name : "Li-yiwei",
+	img : "../src/assets/images/1.jpg"
+	});
+
+
     return {
-      user: {
-      	name: 'Li-yiwei',
-      	img: '../src/assets/images/1.jpg'
-      }
+      user,
     }
   }
+});
+interface User {
+	name: string
+	img: string
 }
 </script>
 

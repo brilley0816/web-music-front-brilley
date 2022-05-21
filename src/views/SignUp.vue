@@ -16,7 +16,7 @@
       </el-form-item>
       <el-form-item class="sign-btn">
         <el-button @click="handleSignIn">登录</el-button>
-        <el-button type="primary" @click="handleSignUp(formRef)">确定</el-button>
+        <el-button type="primary" @click="handleSignUp()">确定</el-button>
       </el-form-item>
     </el-form>
   </div>
